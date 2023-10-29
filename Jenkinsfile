@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("Clone"){
             steps{
-                git 'https://github.com/leminhduc201299/hello-devops.git'
+                git url: 'https://github.com/leminhduc201299/hello-devops.git', branch: 'main'
             }
         }
     }
