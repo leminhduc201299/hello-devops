@@ -8,6 +8,8 @@ pipeline{
         }
         stage("Buld image"){
             steps{
+                sh 'docker ps'
+                
                 // This step should not normally be used in your script. Consult the inline help for details.
                 withDockerRegistry(registry: [url: 'https://index.docker.io/v1/', credentialsId: 'docker-hub'], toolName: 'docker'){
                     sh 'ls'
