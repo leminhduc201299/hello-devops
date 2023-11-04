@@ -8,12 +8,10 @@ pipeline{
         }
         stage("Buld image"){
             steps{
-                sh 'call MISA.Fresher.CukCuk.Api/buildlocal.bat 1.0.0.10'
-
                 // This step should not normally be used in your script. Consult the inline help for details.
-                // withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
-                //     sh 'call MISA.Fresher.CukCuk.Api/buildlocal.bat 1.0.0.10'
-                // }
+                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+                    sh 'ls'
+                }
             }
         }
     }
